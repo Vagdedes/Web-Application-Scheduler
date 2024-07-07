@@ -1,6 +1,6 @@
 <?php
 
-function refresh_product_updates(): string
+function local_product_updates(): string
 {
     $bool = false;
     $products = new Account();

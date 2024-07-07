@@ -17,7 +17,6 @@ $files = LoadBalancer::getFiles(
         "/var/www/.structure/library/phone",
         "/var/www/.structure/library/email",
         "/var/www/.structure/library/gameCloud",
-        "/var/www/.structure/library/memory",
         "/var/www/.structure/library/base/placeholder.php",
         "/var/www/.structure/library/base/minecraft.php",
         "/var/www/.structure/library/base/encrypt.php",
