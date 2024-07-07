@@ -33,7 +33,7 @@ if (!empty($files)) {
     unset($argv[0]);
     $function = array_shift($argv);
 
-    if (start_memory_process(get_server_identifier() . $function)) {
+    if (start_memory_process($function)) {
         require_once '/root/schedulers/tasks/' . $function . ".php";
         echo call_user_func_array($function, $argv) . "\n";
     } else {
