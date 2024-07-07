@@ -1,5 +1,4 @@
 <?php
-require_once '/var/www/.structure/library/base/sql.php';
 $current_sql_database = null;
 $previous_sql_database = null;
 $sql_database_directory = null;
