@@ -5,8 +5,6 @@ require_once '/root/schedulers/utilities/sql_connection.php';
 require_once '/root/schedulers/utilities/memory/init.php';
 require_once '/root/schedulers/utilities/communication.php';
 require_once '/root/schedulers/utilities/LoadBalancer.php';
-unset($argv[0]);
-$function = array_shift($argv);
 $files = LoadBalancer::getFiles(
     array(
         "/var/www/.structure/library/account",
@@ -33,11 +31,15 @@ if (!empty($files)) {
     foreach ($files as $file) {
         eval($file);
     }
-}
+    unset($argv[0]);
+    $function = array_shift($argv);
 
-if (start_memory_process($function)) {
-    require_once '/root/schedulers/tasks/' . $function . ".php";
-    echo call_user_func_array($function, $argv);
+    if (start_memory_process(get_server_identifier() . $function)) {
+        require_once '/root/schedulers/tasks/' . $function . ".php";
+        echo call_user_func_array($function, $argv) . "\n";
+    } else {
+        echo "process\n";
+    }
 } else {
-    echo "process";
+    echo "files\n";
 }
