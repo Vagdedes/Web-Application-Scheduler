@@ -2,6 +2,7 @@
 require_once '/root/schedulers/utilities/utilities.php';
 require_once '/root/schedulers/utilities/sql.php';
 require_once '/root/schedulers/utilities/sql_connection.php';
+require_once '/root/schedulers/utilities/memory/init.php';
 require_once '/root/schedulers/utilities/communication.php';
 require_once '/root/schedulers/utilities/LoadBalancer.php';
 unset($argv[0]);
@@ -36,5 +37,7 @@ if (!empty($files)) {
 
 if (start_memory_process($function)) {
     require_once '/root/schedulers/tasks/' . $function . ".php";
-    call_user_func_array($function, $argv);
+    echo call_user_func_array($function, $argv);
+} else {
+    echo "process";
 }

@@ -1,7 +1,8 @@
 <?php
 
-function refresh_product_updates(): void
+function refresh_product_updates(): string
 {
+    $bool = false;
     $products = new Account();
     $products = $products->getProduct()->find(null, false);
 
@@ -150,6 +151,7 @@ function refresh_product_updates(): void
                                     )
                                 )) {
                                     clear_memory(null);
+                                    $bool = true;
                                 }
                             }
                         }
@@ -158,4 +160,5 @@ function refresh_product_updates(): void
             }
         }
     }
+    return $bool ? "true" : "false";
 }
