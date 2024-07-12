@@ -35,7 +35,12 @@ if (!empty($files)) {
 
     if (start_memory_process($function)) {
         require_once '/root/schedulers/tasks/' . $function . ".php";
-        echo call_user_func_array($function, $argv) . "\n";
+
+        try {
+            echo call_user_func_array($function, $argv) . "\n";
+        } catch (Throwable $exception) {
+            // todo
+        }
     } else {
         echo "process\n";
     }
