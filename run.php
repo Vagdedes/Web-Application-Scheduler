@@ -37,9 +37,8 @@ if (!empty($files)) {
     require_once '/root/schedulers/tasks/' . $function . ".php";
 
     while (true) {
-        check_clear_memory();
-
         try {
+            clear_memory();
             echo call_user_func_array($function, $argv) . "\n";
         } catch (Throwable $exception) {
             // todo
