@@ -160,5 +160,5 @@ function local_product_updates(): string
             }
         }
     }
-    return $bool ? "true" : "false";
+    return strval($bool);
 }

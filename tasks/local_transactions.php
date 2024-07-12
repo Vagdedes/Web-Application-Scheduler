@@ -6,5 +6,5 @@ function local_transactions(): string
     $bool |= update_stripe_storage();
     $account = new Account();
     $account->getPaymentProcessor()->run();
-    return $bool ? "true" : "false";
+    return strval($bool);
 }
