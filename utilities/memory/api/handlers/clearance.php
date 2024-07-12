@@ -58,5 +58,3 @@ function check_clear_memory(): void
     }
     load_previous_sql_database();
 }
-
-check_clear_memory();
