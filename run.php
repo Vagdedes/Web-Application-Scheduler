@@ -41,12 +41,11 @@ if (!empty($files)) {
             clear_memory();
             echo call_user_func_array($function, $argv) . "\n";
         } catch (Throwable $exception) {
-            $trace = $exception->getTrace();
+            $trace = $exception->getTraceAsString();
             $file = fopen(
-                "/root/schedulers/errors/exception_" . array_to_integer($trace, true) . ".txt",
+                "/root/schedulers/errors/exception_" . string_to_integer($trace, true) . ".txt",
                 "w"
             );
-            $trace = json_encode($trace);
             echo $trace . "\n";
 
             if ($file !== false) {
