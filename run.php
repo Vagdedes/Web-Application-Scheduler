@@ -25,7 +25,13 @@ $files = LoadBalancer::getFiles(
 );
 if (!empty($files)) {
     $email_credentials_directory = "/root/schedulers/private/credentials/email_credentials";
+    $patreon1_credentials_directory = "/root/schedulers/private/credentials/patreon_1_credentials";
     $patreon2_credentials_directory = "/root/schedulers/private/credentials/patreon_2_credentials";
+    $builtbybit_credentials_directory = "/root/discord_bot/private/credentials/builtbybit_credentials";
+    $polymart_credentials_directory = "/root/schedulers/private/credentials/polymart_credentials";
+    $twilio_credentials_directory = "/root/schedulers/private/credentials/twilio_credentials";
+    $stripe_credentials_directory = "/root/schedulers/private/credentials/stripe_credentials";
+    $paypal_credentials_directory = "/root/schedulers/private/credentials/paypal_credentials";
 
     foreach ($files as $file) {
         eval($file);
