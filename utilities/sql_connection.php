@@ -36,7 +36,7 @@ function load_sql_database($file = SqlDatabaseCredentials::STORAGE): void
     global $current_sql_database, $previous_sql_database;
     $previous_sql_database = $current_sql_database;
     $current_sql_database = get_keys_from_file(
-        "/root/schedulers/private/credentials/" . $file,
+        $file,
         3
     );
 
