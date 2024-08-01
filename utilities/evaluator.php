@@ -11,9 +11,7 @@ class evaluator
         "/var/www/.structure/library/base/utilities.php",
         "/var/www/.structure/library/base/sql.php"
     ),
-        exemptedPaths = array(
-        "/var/www/.structure/library/memory/"
-    );
+        exemptedPaths = array();
 
     public static function run(?array $scripts = null): array
     {

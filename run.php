@@ -2,7 +2,6 @@
 ini_set('memory_limit', '-1');
 require_once '/root/schedulers/utilities/utilities.php';
 require_once '/root/schedulers/utilities/sql.php';
-require_once '/root/schedulers/utilities/memory/init.php';
 require_once '/root/schedulers/utilities/communication.php';
 require_once '/root/schedulers/utilities/evaluator.php';
 $files = evaluator::run();
