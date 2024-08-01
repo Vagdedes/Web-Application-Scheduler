@@ -150,7 +150,7 @@ function local_product_updates(): string
                                         "creation_date" => get_current_date()
                                     )
                                 )) {
-                                    clear_memory(null);
+                                    clear_memory();
                                     $bool = true;
                                 }
                             }
