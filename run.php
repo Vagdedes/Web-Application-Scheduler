@@ -31,10 +31,10 @@ if (!empty($files)) {
     $function = array_pop($function);
     $refreshSeconds = array_shift($argv);
     require_once '/root/schedulers/tasks/' . $function . ".php";
+    clear_memory();
 
     while (true) {
         try {
-            clear_memory();
             echo call_user_func_array($function, $argv) . "\n";
         } catch (Throwable $exception) {
             $trace = $exception->getTraceAsString();
