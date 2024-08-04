@@ -131,7 +131,9 @@ function local_product_updates(): string
                                         }
                                     }
                                 }
+                                global $product_updates_table;
                                 $processed[] = $hash;
+
                                 if (sql_insert(
                                     $product_updates_table,
                                     array(
