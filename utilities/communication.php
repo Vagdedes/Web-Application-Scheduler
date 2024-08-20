@@ -120,7 +120,7 @@ function is_private_connection($checkClientIP = false): bool
                         )
                     );
                     load_previous_sql_database();
-                    set_sql_cache();
+
                     if (!empty(get_sql_query(
                         $administrator_local_server_ip_addresses_table,
                         array("id"),
@@ -136,7 +136,6 @@ function is_private_connection($checkClientIP = false): bool
                         1
                     ))) {
                         if ($checkClientIP) {
-                            set_sql_cache();
                             if (!empty(get_sql_query(
                                 $administrator_local_server_ip_addresses_table,
                                 array("id"),
