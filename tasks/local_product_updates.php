@@ -138,6 +138,7 @@ function local_product_updates(): string
                                     $product_updates_table,
                                     array(
                                         "automated" => true,
+                                        "no_account" => $supportedVersion->no_account,
                                         "product_id" => $product->id,
                                         "version" => $number,
                                         "name" => $supportedVersion->name,
