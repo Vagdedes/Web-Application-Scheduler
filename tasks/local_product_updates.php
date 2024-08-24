@@ -18,7 +18,7 @@ function local_product_updates(): string
             $versions = array();
 
             foreach ($platforms as $platform) {
-                if (isset($product->identification[$platform])) {
+                if (array_key_exists($platform, $product->identification)) {
                     switch ($platform) {
                         case AccountAccounts::SPIGOTMC_URL:
                             if (array_key_exists($product->identification[$platform], $contentsArray)) {
@@ -137,8 +137,8 @@ function local_product_updates(): string
                                 if (sql_insert(
                                     $product_updates_table,
                                     array(
+                                        "identification_url" => $supportedVersion->identification_url,
                                         "automated" => true,
-                                        "no_account" => $supportedVersion->no_account,
                                         "product_id" => $product->id,
                                         "version" => $number,
                                         "name" => $supportedVersion->name,
