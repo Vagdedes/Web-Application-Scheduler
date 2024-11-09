@@ -4,7 +4,12 @@ require_once '/root/schedulers/utilities/utilities.php';
 require_once '/root/schedulers/utilities/sql.php';
 require_once '/root/schedulers/utilities/communication.php';
 require_once '/root/schedulers/utilities/evaluator.php';
-$files = evaluator::run();
+$files = evaluator::run(
+    array(
+        "/var/www/.structure/library/hetzner/init.php",
+        "/var/www/.structure/library/cloudflare/init.php"
+    )
+);
 
 if (!empty($files)) {
     $total = array();
