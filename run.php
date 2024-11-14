@@ -12,24 +12,8 @@ $files = evaluator::run(
 );
 
 if (!empty($files)) {
-    $total = array();
-
-    foreach ($files as $file => $contents) {
-        try {
-            @eval($contents);
-            $total[] = $contents;
-        } catch (Throwable $error) {
-            var_dump($file . ": " . $error->getMessage());
-        }
-    }
-    $file = fopen(
-        "/root/schedulers/evaluated/files.php",
-        "w"
-    );
-
-    if ($file !== false) {
-        fwrite($file, implode("\n", $total));
-        fclose($file);
+    foreach ($files as $path) {
+        require $path;
     }
     unset($argv[0]);
     $function = explode("/", array_shift($argv));
