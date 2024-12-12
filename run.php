@@ -8,7 +8,8 @@ require_once '/root/schedulers/utilities/AbstractMethodReply.php';
 $files = evaluator::run(
     array(
         "/var/www/.structure/library/hetzner/init.php",
-        "/var/www/.structure/library/cloudflare/init.php"
+        "/var/www/.structure/library/cloudflare/init.php",
+        "/var/www/.structure/library/hetzner/api/tasks/maintain.php"
     )
 );
 
