@@ -1,5 +1,6 @@
 <?php
 ini_set('memory_limit', '-1');
+require '/root/vendor/autoload.php';
 require_once '/root/schedulers/utilities/utilities.php';
 require_once '/root/schedulers/utilities/sql.php';
 require_once '/root/schedulers/utilities/communication.php';
