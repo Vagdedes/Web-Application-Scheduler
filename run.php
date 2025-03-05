@@ -19,7 +19,7 @@ if (!empty($files)) {
     unset($argv[0]);
     $function = explode("/", array_shift($argv));
     $function = array_pop($function);
-    $refreshSeconds = array_shift($argv);
+    $refreshSeconds = round(array_shift($argv) * 1_000_000);
     require_once '/root/schedulers/tasks/' . $function . ".php";
     clear_memory();
 
@@ -39,7 +39,7 @@ if (!empty($files)) {
                 fclose($file);
             }
         }
-        sleep($refreshSeconds);
+        usleep($refreshSeconds);
     }
 } else {
     echo "files\n";
