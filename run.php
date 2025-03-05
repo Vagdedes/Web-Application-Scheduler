@@ -39,7 +39,9 @@ if (!empty($files)) {
                 fclose($file);
             }
         }
-        usleep($refreshSeconds);
+        if ($refreshSeconds > 0) {
+            usleep($refreshSeconds);
+        }
     }
 } else {
     echo "files\n";
